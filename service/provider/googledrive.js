@@ -45,12 +45,12 @@ class GoogleDriver extends ProviderInterface {
   }
 
   authorize(ip, callback) {
-    this.refreshToken.call(this, ip, () => {
+    this.refreshToken(ip, (error) => {
       const authUrl = this.o2C.generateAuthUrl({
         access_type: 'offline',
         scope: SCOPES
       });
-
+      console.log(error);
       db.findOne({
         ip: ip
       }, (err, doc) => {
@@ -95,7 +95,8 @@ class GoogleDriver extends ProviderInterface {
               callback();
             }
           });
-        });
+        })
+        .catch(callback);
       } else {
         callback();
       }
