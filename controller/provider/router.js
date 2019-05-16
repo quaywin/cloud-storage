@@ -58,16 +58,7 @@ router.route('/:providerId')
         const dataResponse = `
             <html><body>
               <a href="${req.data.host}/v1/provider/${req.params.providerId}/files">Show Root ${req.data.host}/v1/provider/${req.params.providerId}/files</a>
-            <script>
-            let success = ${data};
-            window.parent.opener.postMessage({
-                loginSuccess: true
-            }, '*');
-            setTimeout(function() {
-              window.close();
-            }, 200);
-
-            </script></body></html>`;
+            </body></html>`;
         res.writeHead(200, {
           'Content-Type': 'text/html'
         });
