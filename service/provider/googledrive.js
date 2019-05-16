@@ -139,7 +139,6 @@ class GoogleDriver extends ProviderInterface {
   listFiles(req, callback) {
     const ip = req.data.ip;
     const id = req.data.id || 'root';
-    console.log(req.data);
     this.refreshToken(ip, () => {
       db.findOne({
         ip: ip
@@ -160,7 +159,6 @@ class GoogleDriver extends ProviderInterface {
             if (err) {
               callback(`The API returned an error: ${err}`);
             } else {
-              console.log(response.data.files)
               const files = response.data.files;
               if (files.length === 0) {
                 callback('No files found.');

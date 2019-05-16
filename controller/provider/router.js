@@ -5,20 +5,15 @@ const Router = require('express')
 const router = new Router();
 
 const GoogleService = require('../../service/provider/googledrive.js');
-const DropboxService = require('../../service/provider/dropbox.js');
 const OneDriveService = require('../../service/provider/onedrive.js');
 const Controller = require('./controller');
 const googleService = new GoogleService();
-const dropboxService = new DropboxService();
 const oneDriveService = new OneDriveService();
 
 router.param('providerId', (req, res, next, id) => {
   switch (id) {
     case 'google':
       req.service = googleService;
-      break;
-    case 'dropbox':
-      req.service = dropboxService;
       break;
     case 'onedrive':
       req.service = oneDriveService;
@@ -42,11 +37,11 @@ router.route('/*')
     const code = req.query.code;
     const host = `${req.protocol}://${req.get('host')}`;
     req.data = {
-      ip: ip,
-      id: id,
-      path: path,
-      code: code,
-      host: host
+      ip,
+      id,
+      path,
+      code,
+      host
     };
     next();
   });
@@ -61,7 +56,9 @@ router.route('/:providerId')
           });
       } else {
         const dataResponse = `
-            <html><body>NODE<script>
+            <html><body>
+              <a href="${req.data.host}/v1/provider/${req.params.providerId}/files">Show Root ${req.data.host}/v1/provider/${req.params.providerId}/files</a>
+            <script>
             let success = ${data};
             window.parent.opener.postMessage({
                 loginSuccess: true

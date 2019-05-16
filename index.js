@@ -46,7 +46,7 @@ app.use(cors(corsOptionsDelegate), (req, res, next) => {
 app.use('/', routes);
 
 server.listen(config.server.port, () => {
-  console.log('Drive Server');
+  console.log('Drive Server started');
 });
 
 module.exports = app;
