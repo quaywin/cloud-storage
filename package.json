@@ -1,0 +1,36 @@
+{
+  "name": "storage-cloud",
+  "version": "0.1.0",
+  "description": "server",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "engines": {
+    "node": ">=6"
+  },
+  "author": "Thang Nguyen <quaywin@gmail.com>",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cors": "^2.8.4",
+    "dotenv": "^4.0.0",
+    "express": "^4.14.0",
+    "googleapis": "^39.0.0",
+    "helmet": "^3.1.0",
+    "ipaddr.js": "^1.5.2",
+    "lodash": "^4.17.4",
+    "morgan": "^1.7.0",
+    "nedb": "^1.8.0",
+    "onedrive-api": "0.0.9",
+    "request-ip": "^2.0.2"
+  },
+  "devDependencies": {
+    "eslint": "^3.11.1",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.7.1",
+    "nodemon": "^1.11.0"
+  }
+}
