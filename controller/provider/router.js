@@ -55,14 +55,14 @@ router.route('/:providerId')
             message: error.toString()
           });
       } else {
-        const dataResponse = `
-            <html><body>
-              <a href="${req.data.host}/v1/provider/${req.params.providerId}/files">Show Root ${req.data.host}/v1/provider/${req.params.providerId}/files</a>
-            </body></html>`;
-        res.writeHead(200, {
-          'Content-Type': 'text/html'
-        });
-        res.end(dataResponse);
+        // const dataResponse = `
+        //     <html><body>
+        //       <a href="${req.data.host}/v1/provider/${req.params.providerId}/files">Show Root ${req.data.host}/v1/provider/${req.params.providerId}/files</a>
+        //     </body></html>`;
+        // res.writeHead(200, {
+        //   'Content-Type': 'text/html'
+        // });
+        res.redirect('http://localhost:5000');
       }
     });
   });

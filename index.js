@@ -20,8 +20,8 @@ app.use(bodyParser.json({
 app.use(morgan('tiny'));
 
 const siteURL = process.env.SITE_URL || 'http://localhost:3000';
-const apiURL = process.env.API_URL || 'http://localhost:8000';
-const whitelist = [siteURL, apiURL, 'http://localhost:3000'];
+const apiURL = process.env.API_URL || 'http://localhost:5000';
+const whitelist = [siteURL, apiURL, 'http://localhost:5000'];
 const corsOptionsDelegate = (req, callback) => {
   req.url = req.url.replace(/\/\//, '/');
   req.path = req.path.replace(/\/\//, '/');

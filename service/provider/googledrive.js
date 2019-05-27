@@ -170,9 +170,7 @@ class GoogleDriver extends ProviderInterface {
           });
 
         } else {
-          callback(null, {
-            status: false
-          });
+          callback('error');
         }
       });
     });
