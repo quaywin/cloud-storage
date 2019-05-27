@@ -62,7 +62,7 @@ router.route('/:providerId')
         // res.writeHead(200, {
         //   'Content-Type': 'text/html'
         // });
-        res.redirect('http://localhost:5000');
+        res.redirect(process.env.SITE_URL || 'http://localhost:5000');
       }
     });
   });
