@@ -19,7 +19,7 @@
     "googleapis": "^39.0.0",
     "helmet": "^3.1.0",
     "ipaddr.js": "^1.5.2",
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.19",
     "morgan": "^1.7.0",
     "nedb": "^1.8.0",
     "onedrive-api": "0.0.9",
